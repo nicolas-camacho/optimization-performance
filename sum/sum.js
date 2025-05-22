@@ -48,3 +48,10 @@ Deno.bench({
     baseline: true,
     fn: () => sumUsingForLoop(largeArray),
 });
+
+export {
+    sumUsingForeach,
+    sumUsingReduce,
+    sumUsingForOf,
+    sumUsingForLoop,
+}
