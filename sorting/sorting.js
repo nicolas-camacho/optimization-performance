@@ -64,3 +64,8 @@ Deno.bench({
     baseline: true,
     fn: () => testArray.toSorted(),
 })
+
+export {
+    bubbleSort,
+    quickSort,
+}

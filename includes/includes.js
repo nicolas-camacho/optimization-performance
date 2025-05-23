@@ -61,3 +61,8 @@ Deno.bench({
     }
 });
 
+export {
+    generateTestData,
+    generateLookupValues,
+}
+

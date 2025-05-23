@@ -1,32 +1,37 @@
-import { sumUsingForOf, sumUsingReduce, sumUsingForeach, sumUsingForLoop } from './sum.js';
+import { quickSort, bubbleSort } from "./sorting.js";
 
-function runTest(){
-    const largeArray = Array.from({ length: 1000000 }, (_, i) => i + 1);
-    const testVar = sumUsingForLoop(largeArray);
+function runTest() {
+    const testArray = Array.from(
+        { length: 10000 },
+        () => Math.floor(Math.random() * 10000)
+    );
+
+    const testVar = bubbleSort(testArray);
     return {
         testVar,
-        largeArray,
-    }
-} 
+        testArray,
+    };
+}
 
 function run() {
     const result = {
         arraysCreated: 0,
-        sumExecute: 0,
-    }
+        sortExecute: 0,
+    };
 
     const idInterval = setInterval(() => {
         const _ = runTest();
         result.arraysCreated++;
-        result.sumExecute++;
+        result.sortExecute++;
     }, 0);
 
     setTimeout(() => {
         clearInterval(idInterval);
         console.log("Test finished");
         console.log("Arrays created: ", result.arraysCreated);
-        console.log("Sum executed: ", result.sumExecute);
+        console.log("Sort executed: ", result.sortExecute);
     }, 20000);
 }
 
 run();
+
