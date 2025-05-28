@@ -1,10 +1,10 @@
-import { PerformClassic, PerformMethods } from "./methods.js";
+import { PerformImperative, PerformFunctional } from "./methods.js";
 
 const numbers = Array.from({ length: 10000 }, () => Math.floor(Math.random() * 10000));
 
 function run() {
     const idInterval = setInterval(() => {
-        const _ = PerformClassic(numbers);
+        const _ = PerformImperative(numbers);
     }, 0);
 
     setTimeout(() => {

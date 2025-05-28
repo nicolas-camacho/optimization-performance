@@ -1,11 +1,11 @@
 const numbers = Array.from({ length: 10000 }, () => Math.floor(Math.random() * 10000));
 
-function PerformMethods(data) {
+function PerformFunctional(data) {
     const result = data.filter((num) => num % 2 === 0).reduce((acc, num) => acc + num, 0);
     return result;
 }
 
-function PerformClassic(data) {
+function PerformImperative(data) {
     let result = 0;
     for (let i = 0; i < data.length; i++) {
         if (data[i] % 2 === 0) {
@@ -16,17 +16,17 @@ function PerformClassic(data) {
 }
 
 Deno.bench({
-    name: "JS methods",
-    fn: () => PerformMethods(numbers),
+    name: "Functional",
+    fn: () => PerformFunctional(numbers),
 });
 
 Deno.bench({
-    name: "Basic way",
+    name: "Imperative",
     baseline: true,
-    fn: () => PerformClassic(numbers),
+    fn: () => PerformImperative(numbers),
 });
 
 export {
-    PerformMethods,
-    PerformClassic,
+    PerformFunctional,
+    PerformImperative,
 }
