@@ -42,7 +42,7 @@ function megamorphic() {
   const o5 = { b: _, c: _, d: _, e: _, a: 1 };
 
   let result = 0;
-  for (let i = 0; i < 1000000; i++) {
+  for (let i = 0; i < 1_000_000; i++) {
     result += add(o1, o2);
     result += add(o3, o4);
     result += add(o5, o1);

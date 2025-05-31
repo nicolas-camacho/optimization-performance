@@ -13,7 +13,7 @@ function generateTestData(size) {
     { length: size },
     (_, i) => `user${i}@${["gmail.com", "yahoo.com", "hotmail.com"][i % 3]}`,
   );
-
+  
   return [...userIds, ...productIds, ...emails];
 }
 
